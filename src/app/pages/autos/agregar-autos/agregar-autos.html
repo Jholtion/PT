@@ -1,0 +1,105 @@
+<header>
+  <div class="header-content">
+    <h1>Agregar Nuevo Auto</h1>
+    <a routerLink="/autos" class="nav-link">Volver</a>
+  </div>
+</header>
+
+<div class="form-container">
+  <form (ngSubmit)="guardarAuto()">
+    <label for="id">ID:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.id"
+      name="id"
+      id="id"
+      placeholder="Ingresa el ID"
+      title="ID del auto"
+      required
+    />
+
+    <label for="marca">Marca:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.marca"
+      name="marca"
+      id="marca"
+      placeholder="Ingresa la marca"
+      title="Marca del auto"
+      required
+    />
+
+    <label for="modelo">Modelo:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.modelo"
+      name="modelo"
+      id="modelo"
+      placeholder="Ingresa el modelo"
+      title="Modelo del auto"
+      required
+    />
+
+    <label for="motor">Motor:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.motor"
+      name="motor"
+      id="motor"
+      placeholder="Ingresa el motor"
+      title="Motor del auto"
+      required
+    />
+
+    <label for="tipo">Tipo:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.tipo"
+      name="tipo"
+      id="tipo"
+      placeholder="Ingresa el tipo"
+      title="Tipo de auto"
+      required
+    />
+
+    <label for="transmision">Transmisión:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.transmision"
+      name="transmision"
+      id="transmision"
+      placeholder="Ingresa la transmisión"
+      title="Transmisión del auto"
+      required
+    />
+
+    <label for="description">Descripción:</label>
+    <textarea
+      [(ngModel)]="nuevoAuto.description"
+      name="description"
+      id="description"
+      placeholder="Ingresa descripción"
+      title="Descripción del auto"
+      required
+    ></textarea>
+
+    <label for="img">Imagen:</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoAuto.img"
+      name="img"
+      id="img"
+      placeholder="URL de la imagen"
+      title="Imagen del auto"
+      (input)="actualizarImagen(nuevoAuto.img)"
+      required
+    />
+
+    <div *ngIf="previewImg">
+      <p>Vista previa:</p>
+      <img [src]="previewImg" alt="Imagen del auto" width="200" />
+    </div>
+
+    <button type="submit">Agregar Auto</button>
+  </form>
+</div>

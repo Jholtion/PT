@@ -1,0 +1,20 @@
+<div class="main-content">
+  <h1>Autos registrados</h1>
+  <button routerLink="/agregar">Agregar Auto</button>
+</div>
+
+<div class="car-list">
+  <div *ngFor="let auto of autos" class="car-item">
+    <div class="car-details">
+      <img [src]="auto.img" alt="Imagen del auto" width="200">
+      <p><strong>{{ auto.marca }} - {{ auto.modelo }}</strong></p>
+      <p><strong>Motor:</strong> {{ auto.motor }}</p>
+      <p><strong>Tipo:</strong> {{ auto.tipo }}</p>
+      <p><strong>Transmisión:</strong> {{ auto.transmision }}</p>
+
+      <button routerLink="/vista/{{ auto.id }}">Ver Detalles</button>
+      <button routerLink="/editar/{{ auto.id }}">Editar Auto</button>
+      <button (click)="deleteAuto(auto.id)">Eliminar Auto</button>
+    </div>
+  </div>
+</div>

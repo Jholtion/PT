@@ -1,0 +1,18 @@
+<header>
+  <div class="header-content">
+    <h1>Informacion automovil</h1>
+    <a routerLink="/autos" class="nav-link">Volver</a>
+  </div>
+</header>
+
+<div class="form-container">
+  <p><strong>Marca:</strong> {{ auto.marca }}</p>
+  <p><strong>Modelo:</strong> {{ auto.modelo }}</p>
+  <p><strong>Motor:</strong> {{ auto.motor }}</p>
+  <p><strong>Tipo:</strong> {{ auto.tipo }}</p>
+  <p><strong>Transmisión:</strong> {{ auto.transmision }}</p>
+  <p><strong>Descripción:</strong> {{ auto.description }}</p>
+  <div *ngIf="previewImg">
+    <img [src]="previewImg" alt="Imagen del auto" width="200" />
+  </div>
+</div>
